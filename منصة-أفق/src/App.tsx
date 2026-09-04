@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ExplorePage from './ExplorePage'
 import {
   ArrowLeft,
   Bell,
@@ -92,7 +93,7 @@ function App() {
           {showNotifications && <div className="notification-pop"><strong>الإشعارات</strong><span>لديك درس جديد في تجربة المستخدم</span><span>أكملت 72% من دورتك الحالية</span></div>}
         </header>
 
-        <div className="page-wrap">
+        {activeNav === 'استكشف الدورات' ? <ExplorePage query={search} onNotify={notify} /> : <div className="page-wrap">
           <section className="welcome-row">
             <div><p className="eyebrow">الإثنين، 9 سبتمبر 2024 <span className="status-dot" /> يومك مليء بالإمكانات</p><h1>صباح الخير، سارة <span>✦</span></h1><p className="welcome-copy">خطوة صغيرة اليوم تصنع فرقًا كبيرًا في مستقبلك.</p></div>
             <button className="primary-btn" onClick={() => notify('تم فتح مستكشف الدورات')}><Compass size={18} /> استكشف شيئًا جديدًا</button>
@@ -115,7 +116,7 @@ function App() {
             <section className="section-block weekly-plan"><div className="section-heading"><div><h2>خطة هذا الأسبوع</h2><p>نظرة سريعة على جدولك</p></div><button className="text-btn" onClick={() => setActiveNav('الجدول')}>كل الجدول <ChevronLeft size={17} /></button></div><div className="date-strip">{schedule.map((item) => <button key={item.date} className={item.active ? 'date active' : 'date'} onClick={() => notify(`تم اختيار ${item.day}`)}><span>{item.day}</span><strong>{item.date}</strong></button>)}</div><div className="plan-item"><div className="plan-icon blue-icon"><BookOpen size={18} /></div><div><strong>مراجعة أساسيات البحث</strong><span>تجربة المستخدم · الدرس 4</span></div><time>10:00 ص</time><button className="check-btn" aria-label="تحديد كمكتمل" onClick={() => notify('رائع، تمت إضافة النشاط إلى إنجازاتك')}><Check size={17} /></button></div><div className="plan-item"><div className="plan-icon coral-icon"><MessageCircle size={18} /></div><div><strong>جلسة محادثة مباشرة</strong><span>الإنجليزية · مع مريم</span></div><time>06:30 م</time><button className="check-btn" aria-label="تحديد كمكتمل" onClick={() => notify('تم تذكيرك بالجلسة')}><Bell size={16} /></button></div></section>
             <section className="section-block achievement"><div className="achievement-glow" /><div className="trophy"><Trophy size={25} /></div><p className="eyebrow">إنجاز جديد قريب</p><h2>بقي لك 3 دروس</h2><p>لتحصل على شارة<br /><strong>مستكشف المعرفة</strong></p><div className="achievement-bar"><span style={{ width: '80%' }} /></div><small>8 من 10 دروس مكتملة</small><button onClick={() => notify('تم فتح تفاصيل الشارة')}>عرض التفاصيل <ArrowLeft size={15} /></button></section>
           </div>
-        </div>
+        </div>}
       </main>
       {toast && <div className="toast"><Check size={17} /> {toast}</div>}
     </div>
