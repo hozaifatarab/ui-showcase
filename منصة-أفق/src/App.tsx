@@ -67,7 +67,7 @@ function App() {
   return (
     <div className="app-shell">
       <aside className={`sidebar ${showMenu ? 'is-open' : ''}`}>
-        <div className="brand"><span className="brand-mark">أ</span><span>أفق</span><small>مساحة تعلمك</small></div>
+        <div className="brand"><span className="brand-mark">م</span><span>مَدار</span><small>مساحة تعلمك</small></div>
         <nav className="main-nav" aria-label="التنقل الرئيسي">
           <p className="nav-label">مساحتك</p>
           <NavItem icon={<LayoutDashboard size={19} />} label="نظرة عامة" active={activeNav === 'نظرة عامة'} onClick={() => { setActiveNav('نظرة عامة'); setShowMenu(false) }} />
