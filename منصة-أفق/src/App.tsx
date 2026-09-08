@@ -42,6 +42,9 @@ const courses: Course[] = [
   { title: 'أساسيات تجربة المستخدم', category: 'تصميم', progress: 72, lessons: 18, duration: '6 ساعات', color: 'coral', icon: '✦' },
   { title: 'الإنجليزية للمحادثة', category: 'لغات', progress: 45, lessons: 24, duration: '8 ساعات', color: 'mint', icon: 'Aa' },
   { title: 'مدخل إلى تحليل البيانات', category: 'تقنية', progress: 18, lessons: 16, duration: '5 ساعات', color: 'blue', icon: '∿' },
+  { title: 'الكتابة الإبداعية', category: 'المهارات', progress: 30, lessons: 12, duration: '4 ساعات', color: 'yellow', icon: '✎' },
+  { title: 'أساسيات إدارة المشاريع', category: 'الأعمال', progress: 55, lessons: 20, duration: '9 ساعات', color: 'purple', icon: '◫' },
+  { title: 'التسويق بالمحتوى', category: 'التسويق', progress: 25, lessons: 10, duration: '3 ساعات', color: 'orange', icon: '◎' }
 ]
 
 const schedule = [
@@ -50,6 +53,7 @@ const schedule = [
   { day: 'الثلاثاء', date: '10', active: false },
   { day: 'الأربعاء', date: '11', active: false },
   { day: 'الخميس', date: '12', active: false },
+  { day: 'الجمعة', date: '13', active: false }
 ]
 
 function App() {
@@ -62,7 +66,7 @@ function App() {
 
   const notify = (message: string) => {
     setToast(message)
-    window.setTimeout(() => setToast(''), 2600)
+    window.setTimeout(() => setToast(''), 3000)
   }
 
   return (
