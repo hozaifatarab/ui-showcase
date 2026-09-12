@@ -55,7 +55,11 @@ export default function ExplorePage({ query, onNotify, library, onToggleLibrary 
         </div>
         <label className="level-select">
           <Filter size={15} />
-          <select aria-label="تصفية الدورات حسب المستوى" value={level} onChange={(event) => setLevel(event.target.value)}>
+          <select
+            aria-label="تصفية الدورات حسب المستوى"
+            value={level}
+            onChange={(event) => setLevel(event.target.value)}
+          >
             <option>كل المستويات</option>
             <option>مبتدئ</option>
             <option>متوسط</option>

@@ -9,8 +9,7 @@ type CourseModalProps = {
   notify: (message: string) => void
 }
 
-const FOCUSABLE =
-  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+const FOCUSABLE = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
 export default function CourseModal({ course, onClose, notify }: CourseModalProps) {
   const titleId = useId()
@@ -22,8 +21,7 @@ export default function CourseModal({ course, onClose, notify }: CourseModalProp
     const previousOverflow = body.style.overflow
     body.style.overflow = 'hidden'
 
-    const focusables = () =>
-      Array.from(dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? [])
+    const focusables = () => Array.from(dialogRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? [])
 
     focusables()[0]?.focus()
 
